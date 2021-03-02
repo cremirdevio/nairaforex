@@ -1,0 +1,216 @@
+.flags-size {
+    width: 20px;
+}
+
+.nairaforex-value {
+    margin-right: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+}
+
+.nairaforex-key {
+    font-size: 11px;
+    letter-spacing: .02em;
+    font-weight: 500;
+    margin-bottom: 6px !important;
+    color: rgba(0,22,49,.6);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.nairaforex-positive {
+    color: #42b866;
+}
+
+.nairaforex-negative {
+    color: #f86961;
+}
+
+.nairaforex-hr {
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    content: '';
+    background: #00c94c;
+}
+
+.nf-card-head {
+    padding-bottom: 16px;
+    background-color: #f6f7f8;
+}
+
+.nf-card-head {
+    padding: 16px;
+    background-color: #f6f7f8;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.nf-card-info {
+    margin-bottom: 20px !important;
+}
+
+.nf-card-body {
+    padding: 23px 16px 14px;
+}
+
+.r-card {
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    transition: .2s;
+    border: 1px solid #e5e5e5;
+}
+
+.nf-icon-wrap {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50%;
+}
+
+.nf-position-bottom-left {
+    bottom: 0px;
+    left: 0;
+    position: absolute!important;
+    max-width: 100%;
+}
+
+.nf-table-cell {
+	height: 48px;
+}
+
+.nf-table-text {
+    font-size: 16px;
+}
+
+.nf-table-bold {
+    font-weight: 500;
+}
+
+.nf-table-trader-name {
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.nf-icon-size {
+	/*width: 68px;*/
+}
+
+/* Pagination */
+.uk-pagination>*>* {
+    display: block;
+    color: #999;
+    width: unset;
+    text-align: center;
+    border: unset;
+    border-radius: 7px;
+    padding: 9px 0 7px 0;
+}
+
+.uk-pagination>.uk-active>* {
+    color: #313131;
+    background: unset;
+    border-color: unset;
+}
+
+.r-card__profit-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.r-card__profit-body {
+    display: flex;
+}
+
+.r-card__profit-body-line._positive {
+    background-color: #42b866;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.r-card__profit-body-line._negative {
+    background-color: #ff5c5c;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.r-card__profit-body-line {
+    height: 2px;
+}
+
+.uk-card-default .uk-card-footer {
+    border-top: 1px solid #e5e5e5;
+}
+
+.in-wave-4 .nf-profile-card {
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+
+    margin-right: -30px;
+    margin-left: -30px;
+    border-radius: 0;
+}
+
+/* Dashboard */
+.nf-profile-title {
+	font-size: 1.125rem;
+	font-weight: 400;
+    line-height: 1.75rem;
+}
+
+.nf-profile-desc {
+	font-size: 0.875rem;
+	font-weight: 300;
+	margin-top: 4px !important;
+}
+
+@media (min-width: 640px) {
+    .nf-card-border {
+	    border: 1px solid #e8e8e8 !important;
+	    border-radius: 10px !important;
+	    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow, 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06));
+	}
+
+	.nf-profile-card {
+		margin: 0!important;
+	}
+}
+
+.nf-margin-top {
+	margin-top: 20px;
+}
+
+.nf-card-footer {
+    padding: 12px 30px !important;
+}
+
+.nf-card-button {
+	padding: 0.5rem 1rem;
+	font-size: 0.75rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
+
+.nf-recovery {
+	gap: 0.25rem;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.nf-recovery div {
+	padding: 0.25rem 0;
+	color: #000;
+}
+
+.invalid-feedback {
+    color: #f0506e;
+    font-size: .824rem;
+    line-height: 1.5;
+}
