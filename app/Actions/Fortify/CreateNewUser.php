@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
+use App\Models\Wallet;
+
 class CreateNewUser implements CreatesNewUsers
 {
     use PasswordValidationRules;
@@ -31,11 +33,19 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'password' => $this->passwordRules(),
         ])->validate();
-
-        return User::create([
+        
+        
+        $user = User::create([
             'username' => $input['username'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        $wallet = Wallet::create([]);
+
+        $wallet->user()->associate($user);
+        $wallet->save();
+
+        return $user;
     }
 }
