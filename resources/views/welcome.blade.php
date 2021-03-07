@@ -178,7 +178,8 @@
               <h3>Get up to 150% commission-free returns on your trades today!</h3>
             </div>
             <div class="uk-width-auto">
-              <a class="uk-button uk-button-primary uk-border-rounded" href="{{ route('register') }}">Open an Account</a>
+              <a class="uk-button uk-button-primary uk-border-rounded" href="{{ route('register') }}">Open an
+                Account</a>
             </div>
           </div>
         </div>
@@ -210,7 +211,8 @@
               <div class="uk-flex uk-flex-column uk-margin-left">
                 <h4 class="uk-margin-remove nf-table-trader-name">{{ $trader->name }}</h4>
                 <span class="uk-text-primary uk-text-left">
-                  {{ $trader->getCountry() }} <img src="{{ $trader->getFlag() }}" alt="Nigeria office" class="flags-size">
+                  {{ $trader->getCountry() }} <img src="{{ $trader->getFlag() }}" alt="Nigeria office"
+                    class="flags-size">
                 </span>
               </div>
             </div>
@@ -239,14 +241,16 @@
               </div>
               <div class="uk-grid uk-flex uk-flex-center uk-margin-remove nf-card-info">
                 <div class="uk-width-2-3 uk-flex uk-flex-column uk-text-center uk-padding-remove">
-                  <p class="uk-text-small uk-margin-remove nairaforex-key uk-text-uppercase">Rating <span>{{ $trader->rating }}</span>
+                  <p class="uk-text-small uk-margin-remove nairaforex-key uk-text-uppercase">Rating
+                    <span>{{ $trader->rating }}</span>
                   </p>
                   <div>
                     {!! to_rating($trader->rating) !!}
                   </div>
                 </div>
               </div>
-              <a href="{{ route('traders') }}" class="uk-button uk-button-default uk-border-rounded uk-align-center uk-margin-remove">Assign
+              <a href="{{ route('traders') }}"
+                class="uk-button uk-button-default uk-border-rounded uk-align-center uk-margin-remove">Assign
                 trader<i class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
             </div>
           </div>
