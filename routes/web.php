@@ -61,7 +61,8 @@ Route::group(['middleware' => 'auth', 'web'], function () {
             Route::get('/admin/traders/create', [App\Http\Controllers\Admin\TraderController::class, 'create'])->name('admin.traders.create');
             Route::post('/admin/traders/create', [App\Http\Controllers\Admin\TraderController::class, 'store'])->name('admin.traders.store');
             Route::get('/admin/traders/edit/{trader:name}', [App\Http\Controllers\Admin\TraderController::class, 'edit'])->name('admin.traders.edit');
-            Route::put('/admin/traders/{trader}', [App\Http\Controllers\Admin\TraderController::class, 'upload'])->name('admin.traders.update');
+            Route::put('/admin/traders/{trader:name}', [App\Http\Controllers\Admin\TraderController::class, 'update'])->name('admin.traders.update');
+            Route::put('/admin/traders/{trader:name}/upload', [App\Http\Controllers\Admin\TraderController::class, 'upload'])->name('admin.traders.upload');
             Route::delete('/admin/traders/{trader}', [App\Http\Controllers\Admin\TraderController::class, 'destroy'])->name('admin.traders.delete');
             // Upload Trader Icon
             Route::post('/admin/traders/{trader}/icon', [App\Http\Controllers\Admin\TraderController::class, 'upload'])->name('admin.traders.icon');

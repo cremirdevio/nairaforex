@@ -30,7 +30,7 @@ class TraderController extends Controller
         return view('admin.edit-trader', compact('trader'));
     }
 
-    public function update(Request $request, Stock $stock) {
+    public function update(Request $request, Trader $trader) {
         $request->validate([
             'name' => 'required|string|max:255',
             'nationality' => 'required|string|max:3',
@@ -42,7 +42,7 @@ class TraderController extends Controller
             'rating' => 'required|numeric|min:0|max:10'
         ]);
 
-        $stock->update($request->all());
+        $trader->update($request->all());
 
         return back()->with('success', 'Trader\'s profile updated successfully!');
     }

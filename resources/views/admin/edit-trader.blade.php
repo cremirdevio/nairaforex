@@ -30,8 +30,9 @@
         </div>
         <hr>
         <div>
-          <form action="{{ route('admin.traders.store') }}" method="post" class="uk-grid-small" uk-grid>
+          <form action="{{ route('admin.traders.update', $trader) }}" method="post" class="uk-grid-small" uk-grid>
             @csrf
+            @method('put')
             <div class="uk-width-1-2@s">
               <div class="uk-margin">
                 <label class="uk-form-label">Trader's Name:</label>
