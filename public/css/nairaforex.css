@@ -172,6 +172,8 @@
 	margin-top: 4px !important;
 }
 
+
+
 @media (min-width: 640px) {
     .nf-card-border {
 	    border: 1px solid #e8e8e8 !important;
@@ -182,6 +184,58 @@
 	.nf-profile-card {
 		margin: 0!important;
 	}
+}
+
+.mobile-btn {
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    text-transform: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 30px;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 42px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #140c64;
+    color: #fff !important;
+    border-radius: .750rem;
+}
+
+.mobile-btn a {
+    color: #fff !important;
+}
+
+@media (min-width: 960px) {
+    .mobile-btn {
+        margin: unset;
+        border: unset;
+        overflow: unset;
+        font: unset;
+        text-transform: unset;
+        -webkit-appearance: unset;
+        border-radius: unset;
+        display: unset;
+        box-sizing: unset;
+        padding: unset;
+        vertical-align: unset;
+        font-size: unset;
+        line-height: unset;
+        text-align: unset;
+        text-decoration: unset;
+        background-color: unset;
+        color: unset;
+        border-radius: unset;
+    }
+
+    .mobile-btn a {
+        color: unset;
+    }
 }
 
 .nf-margin-top {
@@ -213,4 +267,36 @@
     color: #f0506e;
     font-size: .824rem;
     line-height: 1.5;
+}
+
+.test-img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.test-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.test-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.testimony {
+    
+}
+
+.test-name h4 {
+    margin-bottom: 5px;
 }

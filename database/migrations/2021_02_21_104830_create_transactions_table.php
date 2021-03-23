@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
                     ->constrained()
                     ->onUpdate('cascade')
                     ->onDelete('set null');
-            $table->enum('type', ['invest', 'referral', 'deposit']);
+            $table->enum('type', ['invest', 'referral', 'deposit', 'payout']);
             $table->string('reference');
             $table->unsignedBigInteger('amount');
             $table->unsignedBigInteger('balance')->nullable();

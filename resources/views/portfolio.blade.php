@@ -67,22 +67,42 @@
               </div>
 
               @foreach($trade['portfolios'] as $portfolio)
+
               @php $ids[] = $trade['data']->id.'_'.$portfolio->transaction_id @endphp
               <div class="uk-grid uk-flex uk-flex-center uk-margin-remove nf-card-info">
                 <div class="uk-width-1-1 uk-flex uk-flex-column uk-text-left uk-padding-remove">
+                  @if(!$trade['data']->isCompleted($portfolio->end_date))
                   <p class="uk-text-small uk-margin-remove nairaforex-key uk-text-uppercase"> <i
                       class="fa fa-clock uk-text-success"></i>
                     <span id="{{ $trade['data']->id.'_'.$portfolio->transaction_id }}"
-                      data-countdown="{{ $trade['data']->getEndDate($portfolio->created_at) }}">[2D 3h:4min]
+                      data-countdown="{{ $portfolio->end_date }}">[2D 3h:4min]
                     </span>
                   </p>
+                  @elseif($portfolio->status === 'pending')
+                  <p class="uk-text-small uk-margin-remove uk-text-uppercase uk-text-secondary uk-text-center">Cycle
+                    Complete </p>
+                  <form class="uk-flex uk-flex-center uk-margin-small"
+                    action="{{ route('activate.payment', $portfolio->id) }}" method="post">
+                    @csrf
+                    <button type="submit" class="uk-button uk-button-primary uk-border-rounded uk-button-small">Get
+                      Payment Now</button>
+                  </form>
+                  @else
+                  <div class="uk-tile uk-tile-secondary uk-padding-small uk-margin-small">
+                    <p class="uk-text-small uk-margin-remove uk-text-uppercase uk-text-success uk-text-center">Paid Out
+                      <i class="fa fa-check"></i>
+                    </p>
+                  </div>
+                  @endif
+
                   <div class="r-card__profit">
                     <div class="r-card__profit-head">
                       <div class="r-card__profit-title">&#8358;{{ to_money_format($portfolio->amount) }}</div>
                       <div class="r-card__profit-title">&#8358;{{ $trade['data']->getTotalReturns($portfolio->amount) }}
                       </div>
                     </div>
-                    @php $perc = $trade['data']->getGrowth($portfolio->created_at); @endphp
+                    @php $pf = App\Models\TraderUser::find($portfolio->id); @endphp
+                    @php $perc = $pf->getGrowth($portfolio->created_at); @endphp
                     <div class="r-card__profit-body" uk-tooltip="title: Percentage Growth: {{ $perc }}%">
                       <div class="r-card__profit-body-line _positive" style="width: {{ $perc }}%;"></div>
                       <div class="r-card__profit-body-line _negative" style="width: {{ 100 - $perc }}%;"></div>

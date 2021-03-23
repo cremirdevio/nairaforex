@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Trader;
+use App\Models\Testimonial;
 
 class WelcomePageServer extends Controller
 {
@@ -17,7 +18,8 @@ class WelcomePageServer extends Controller
     public function __invoke(Request $request)
     {
         $traders = Trader::all()->take(6);
+        $testimonials = Testimonial::inRandomOrder()->get();
         
-        return view('welcome', compact('traders'));
+        return view('welcome', compact('traders', 'testimonials'));
     }
 }

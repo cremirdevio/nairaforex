@@ -26,6 +26,9 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
   <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}">
+
   <link rel="stylesheet" href="css/vendors/uikit.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/nairaforex.css">
@@ -58,6 +61,9 @@
   <script src="js/vendors/uikit.min.js"></script>
   <script src="js/vendors/indonez.min.js"></script>
   <script src="js/config-theme.js"></script>
+  <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+  <script src="{{ asset('slick/slick.js') }}"></script>
+  @stack('scripts')
 </body>
 
 </html>

@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth', 'web'], function () {
         // Authenticated ✔
         Route::post('/traders-list/{trader}', [App\Http\Controllers\TraderController::class, 'store'])->name('traders.assign');
         Route::get('/portfolio', [App\Http\Controllers\HomeController::class, 'portfolio'])->name('portfolio');
+        Route::post('/portfolio/{trade}', [App\Http\Controllers\HomeController::class, 'activatePayment'])->name('activate.payment');
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'portfolio'])->name('home');
  
     });

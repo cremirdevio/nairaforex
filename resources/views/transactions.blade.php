@@ -58,8 +58,9 @@
                     uk-icon="{{ $transaction->status == 'succeed' ? 'check' : ( $transaction->status == 'closed' ? 'close' : 'future') }}"
                     class="uk-text-{{ $transaction->status == 'succeed' ? 'success' : ( $transaction->status == 'closed' ? 'danger' : 'warning') }}"></span>
                 </td>
-                <td class="uk-text-right">{{ to_money_format($transaction->amount) }}</td>
-                <td class="uk-text-right">{{ to_money_format($transaction->balance) }}</td>
+                <td class="uk-text-right">{{ to_naira($transaction->amount) }}</td>
+                <td class="uk-text-right">
+                  {{  $transaction->type == 'deposit' ? '' : to_naira($transaction->balance) }}</td>
                 <td class="uk-text-right">{{ $transaction->created_at->diffForHumans() }}</td>
               </tr>
               @empty

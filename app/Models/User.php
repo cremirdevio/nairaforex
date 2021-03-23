@@ -76,7 +76,7 @@ class User extends Authenticatable
 
     public function portfolio()
     {
-        return $this->belongsToMany(Trader::class, 'trader_user')->withPivot('amount', 'status', 'end_date', 'transaction_id')->withTimestamps();;
+        return $this->belongsToMany(Trader::class, 'trader_user')->withPivot('id', 'amount', 'status', 'end_date', 'transaction_id')->withTimestamps();;
     }
 
     public function scopeSearch($query, $username)

@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\Trader;
+use App\Models\TraderUser;
 use App\Models\Withdrawal;
 use App\Models\Transaction;
 use App\Models\User;
@@ -77,6 +78,36 @@ class TransactionService
         return redirect()->route('home')->with('success', 'You have successfully assigned the $trader->name to a balance of $amount Naira');
     }
 
+    public function makePayout(TraderUser $trade) {
+        $user = $trade->user;
+        $amount = $trade->getAbsoluteReturns() * 100;
+        
+        DB::beginTransaction();
+
+        try {
+            // Credit the recipients wallet with the amount
+            $user->credit($amount);
+
+            // Change trade status
+            $trade->update(['status' => 'completed']);
+            
+            // Create Reference Code
+            $ref = $this->createReference('payout');
+
+            // dd($request);
+            $payout = Transaction::create(['amount' => $amount, 'type'=> 'payout', 'role' => 'user', 'balance' => $user->balance(), 'reference' => $ref, 'status' => 'succeed']);
+            
+            // Save users transaction
+            $user->transactions()->save($payout);
+        } catch (\Throwable $e) {
+            DB::rollback();
+            return back()->with('error', 'An error occured!');
+        }
+
+        DB::commit();
+
+    }
+
     public function makeTransfer(Request $request, User $sender, User $recipient) {
         $amount = $request->amount * 100;
 
@@ -137,7 +168,7 @@ class TransactionService
                 $reference = 'NRX'.time() .'REF';
                 break;
             default:
-                $reference = 'NRX-'.time() .'-ERR';
+                $reference = 'NRX-'.time() .'-PAY';
                 break;
         }
         return $reference;

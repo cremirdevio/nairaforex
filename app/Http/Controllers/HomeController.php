@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TraderUser;
+use App\Services\TransactionService;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $transactionService;
+
+    public function __construct(TransactionService $transactionService) {
+        $this->transactionService = $transactionService;
+    }
+    
     public function index()
     {
         $user = auth()->user();
@@ -26,6 +30,13 @@ class HomeController extends Controller
         $response = array();
 
         foreach ($portfolio as $trade) {
+            $plan = TraderUser::find($trade->pivot->id);
+            if ($plan->isPaidOut()) {
+                $now = Carbon::now();
+                $threshold = Carbon::parse($plan->end_date)->addDays(3);
+
+                if ($now->gt($threshold)) continue;
+            }
             if (isset($response[$trade->id])) {
                 $tmp = $response[$trade->id]['portfolios'];
                 $tmp[] = $trade->pivot;
@@ -49,7 +60,7 @@ class HomeController extends Controller
         //         ]
         //     }
         // ]
-        
+        // return $response;
         return view('portfolio', compact('response'));
     }
 
@@ -101,6 +112,23 @@ class HomeController extends Controller
         $user->save();
 
         return back()->with('success', 'Your password has been changed successfully. Ensure you secure it properly.');
+    }
+
+    public function activatePayment(TraderUser $trade) {
+        // return $trade;
+        // Check to be sure the trade is completed
+        if (!$trade->isCompleted()) {
+            return back()->with('warning', 'Trade cycle is incomplete! Contact the admin.');
+        }
+        // Check to be sure the status is still pending
+        if ($trade->status !== 'pending') {
+            return back()->with('warning', 'Trade cycle error: 5417! Contact the admin.');
+        }
+        // Credit user
+        // Update status
+        $this->transactionService->makePayout($trade);
+
+        return back()->with('success', 'Successful!');
     }
 
 }

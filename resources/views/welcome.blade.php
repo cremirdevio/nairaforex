@@ -266,6 +266,7 @@
   </div>
 </div>
 <!-- section content end -->
+
 <!-- section content begin -->
 <div class="uk-section uk-section-default uk-padding-remove-vertical in-wave-5 in-offset-bottom-40">
   <div class="uk-container">
@@ -330,4 +331,72 @@
 </div>
 <!-- section content end -->
 
+
+<!-- section content begin -->
+<div class="uk-section uk-padding-large">
+  <div class="uk-container in-wave-4">
+    <div class="uk-grid uk-flex uk-flex-center">
+      <div class="uk-width-1-1 uk-text-center">
+        <h1 class="uk-margin-medium-bottom">What People Are Saying About Us</h1>
+        <div class="slider testimonial ">
+
+        @foreach($testimonials as $says)
+          <div class="multiple">
+            <div class="testimony">
+              <p class="uk-text-center">{{ $says->message }}</p>
+              <div class="uk-flex uk-flex-center">
+                <div class="test-img">
+                  <img  src="{{ Storage::url($says->thumbnail) }}" alt="">
+                </div>
+                <div class="test-name">
+                  <h4>{{ $says->name }}</h4>
+                  <!-- <span class="guest-rev"><a href="#">Client</a></span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- section content end -->
+
 @endsection
+
+@push('scripts')
+<script>
+$('.testimonial').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  dots: true,
+  autoplaySpeed: 10000,
+  responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+</script>
+@endpush

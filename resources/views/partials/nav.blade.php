@@ -17,6 +17,8 @@
         <li><a href="/">Home</a></li>
         <li><a href="{{ route('traders') }}">Remote Traders</a></li>
         @guest
+        <li class="mobile-btn"> <a href="{{ route('login') }}" class="">Log in</a></li>
+        <li class="mobile-btn"><a href="{{ route('register') }}" class="">Sign up</a></li>
         @else
         <li><a href="{{ route('portfolio') }}">My Portfolio</a></li>
         <li><a href="#">Withdraw/Deposit<i class="fas fa-chevron-down"></i></a>
@@ -68,17 +70,16 @@
           </div>
         </li>
         @endhasanyrole
+        <li><a href="#" class="uk-button uk-button-primary uk-button-small " style="color: #fff;"><i
+              class="fas fa-money uk-margin-small-right"></i>&#8358;
+            {{ to_naira(auth()->user()->balance()) }}</a></li>
         @endguest
       </ul>
       <div class="uk-navbar-item uk-visible@m in-optional-nav">
         @guest
-        <a href="{{ route('login') }}" class="uk-button uk-button-text"><i
-            class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
-        <a href="{{ route('register') }}" class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
+
         @else
-        <a href="#" class="uk-button uk-button-primary uk-border-rounded uk-button-small"><i
-            class="fas fa-user-circle uk-margin-small-right"></i>&#8358;
-          {{ to_naira(auth()->user()->balance()) }}</a>
+
         @endguest
       </div>
     </div>
