@@ -19,6 +19,7 @@
               <h4><span>Markets</span></h4>
               <ul class="uk-list uk-link-text">
                 <li><a href="{{ route('traders') }}">Remote Traders</a></li>
+                <li><a href="{{ route('static', 'partner-with-nairaforex') }}">Partner with Nairaforex</a></li>
               </ul>
             </div>
             <div>
@@ -31,8 +32,8 @@
             <div>
               <h4><span>Company</span></h4>
               <ul class="uk-list uk-link-text">
-               <li><a href="{{ route('static', 'terms-and-conditions') }}">Terms and Conditions </a></li>
-            <li><a href="{{ route('static', 'privacy-policy') }}">Privacy Policy</a></li>
+                <li><a href="{{ route('static', 'terms-and-conditions') }}">Terms and Conditions </a></li>
+                <li><a href="{{ route('static', 'privacy-policy') }}">Privacy Policy</a></li>
               </ul>
             </div>
           </div>

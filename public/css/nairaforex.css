@@ -211,6 +211,13 @@
     color: #fff !important;
 }
 
+.uk-modal-dialog {
+    opacity: 1 !important;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+
 @media (min-width: 960px) {
     .mobile-btn {
         margin: unset;
@@ -234,7 +241,11 @@
     }
 
     .mobile-btn a {
-        color: unset;
+        color: #999 !important;
+    }
+
+    .testimony {
+        min-height: 130px !important;
     }
 }
 
@@ -293,10 +304,40 @@
 
 }
 
+.slick-slide {
+    height: 100%;
+}
+
+.testimonial {
+    height: 100% !important;
+}
+
 .testimony {
-    
+    background-color: #c9c3ff;
+    margin: 0 10px;
+    padding: 20px 10px;
+    min-height: 180px;
+    border-radius: 0.75rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimony .message:before {
+    content: "\f10d";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    top: -10px;
+    position: relative;
+    margin-right: 5px;
 }
 
 .test-name h4 {
     margin-bottom: 5px;
+}
+
+
+@media screen and (min-width: 960px) {
+  
 }

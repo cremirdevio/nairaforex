@@ -16,7 +16,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'App\Verify\Service',
+            'App\Services\Twilio\Verification'
+        );
     }
 
     /**
@@ -26,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        Schema::defaultStringLength(125);
 
         Paginator::defaultView('vendor.pagination.default');
 

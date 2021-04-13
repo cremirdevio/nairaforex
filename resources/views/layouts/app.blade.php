@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#313131" />
   <!-- Site Properties -->
-  <title>Nairaforex - Get more freedom in the market</title>
+  <title>Nairaforex - Pro Traders</title>
   <!-- Critical preload -->
   <link rel="preload" href="{{ asset('js/vendors/uikit.min.js') }}" as="script">
   <link rel="preload" href="{{ asset('css/vendors/uikit.min.css') }}" as="style">

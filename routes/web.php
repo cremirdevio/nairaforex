@@ -15,6 +15,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', App\Http\Controllers\WelcomePageServer::class);
 
+// Route::post('/login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store'])->name('login');
+
+// Two Factor Authentication...
+if (true) {
+//     Route::get('/two-factor-challenge', [App\Http\Controllers\VerificationController::class, 'show'])
+//             ->middleware(['guest'])
+//             ->name('two-factor.login');
+    $limiter = config('fortify.limiters.login');    
+    $twoFactorLimiter = config('fortify.limiters.two-factor');
+    
+    Route::post('/two-factor-challenge', [App\Http\Controllers\Auth\TwoFactorController::class, 'store'])
+        ->middleware(array_filter([
+            'guest',
+            $twoFactorLimiter ? 'throttle:'.$twoFactorLimiter : null,
+        ]));
+
+//     // $twoFactorMiddleware = Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')
+//     //     ? ['auth', 'password.confirm']
+//     //     : ['auth'];
+//     $twoFactorMiddleware = ['auth'];
+
+//     Route::post('/user/two-factor-authentication', [App\Http\Controllers\VerificationController::class, 'store'])
+//         ->middleware($twoFactorMiddleware);
+
+//     Route::delete('/user/two-factor-authentication', [App\Http\Controllers\VerificationController::class, 'destroy'])
+//         ->middleware($twoFactorMiddleware);
+}
+
+
 // Traders Route ✔
 Route::get('/remote-traders', [App\Http\Controllers\TraderController::class, 'index'])->name('traders');
        
@@ -38,6 +67,8 @@ Route::group(['middleware' => 'auth', 'web'], function () {
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'portfolio'])->name('home');
  
     });
+    
+    
 
     // Account ✔
     Route::get('/account-settings', [App\Http\Controllers\HomeController::class, 'index'])->name('account');

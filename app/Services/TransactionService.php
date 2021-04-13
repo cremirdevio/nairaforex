@@ -80,7 +80,8 @@ class TransactionService
 
     public function makePayout(TraderUser $trade) {
         $user = $trade->user;
-        $amount = $trade->getAbsoluteReturns() * 100;
+        $amount = $trade->getAbsoluteReturnsRaw() * 100;
+
         
         DB::beginTransaction();
 

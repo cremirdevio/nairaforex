@@ -21,7 +21,7 @@
         <li class="mobile-btn"><a href="{{ route('register') }}" class="">Sign up</a></li>
         @else
         <li><a href="{{ route('portfolio') }}">My Portfolio</a></li>
-        <li><a href="#">Withdraw/Deposit<i class="fas fa-chevron-down"></i></a>
+        <li class="uk-visible@m"><a href="#">Withdraw/Deposit<i class="fas fa-chevron-down"></i></a>
           <div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">
               <li><a href="{{ route('withdrawals.create') }}">Withdraw Funds</a></li>
@@ -30,6 +30,9 @@
             </ul>
           </div>
         </li>
+        <li class="uk-hidden@m"><a href="{{ route('withdrawals.create') }}">Withdraw Funds</a></li>
+        <li class="uk-hidden@m"><a href="{{ route('static', 'deposit-funds') }}">Deposit Funds</a></li>
+        <li class="uk-hidden@m"><a href="{{ route('transactions') }}">Transaction History</a></li>
         <li><a href="#"> {{ auth()->user()->username }}<i class="fas fa-chevron-down"></i></a>
           <div class="uk-navbar-dropdown">
             <ul class="uk-nav uk-navbar-dropdown-nav">

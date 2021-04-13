@@ -3,6 +3,15 @@
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 
+// Classes added for customized SMS 2FA
+use Laravel\Fortify\Actions\AttemptToAuthenticate;
+use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
+use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
+use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+
+// Custom created file
+use App\Http\Controllers\Auth\RedirectToSMS as RedirectToTwoFactorSMSAuthentication;
+
 return [
 
     /*
@@ -142,4 +151,22 @@ return [
         ]),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | SMS 2FA with Twilio (Login Pipeline)
+    |--------------------------------------------------------------------------
+    |
+    | Listing and modifying pipelines to be used when logging in users
+    |
+    */
+
+    'pipelines' => [
+        // 
+        'login' => [
+            config('fortify.limiters.login') ? null : EnsureLoginIsNotThrottled::class,
+            RedirectToTwoFactorSMSAuthentication::class,
+            AttemptToAuthenticate::class,
+            PrepareAuthenticatedSession::class,
+        ]
+    ]
 ];

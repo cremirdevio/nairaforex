@@ -35,6 +35,7 @@ class HomeController extends Controller
                 $now = Carbon::now();
                 $threshold = Carbon::parse($plan->end_date)->addDays(3);
 
+                // Do not display plans that have been paid out for more than 3 days ago.
                 if ($now->gt($threshold)) continue;
             }
             if (isset($response[$trade->id])) {

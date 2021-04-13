@@ -61,11 +61,20 @@ class Transaction extends Model
 
     public function scopeAdmin($query)
     {
-        return $query->where('role', 'admin');
+        return $query->where('role', 'admin')->where('user_id', auth()->id());
+    }
+
+    public function scopeNotAdmin($query)
+    {
+        return $query->where('role', 'user');
     }
 
     public function scopeFunder($query)
     {
-        return $query->where('role', 'funder');
+        return $query->where('role', 'funder')->where('user_id', auth()->id());
+    }
+
+    public function scopeMine($query) {
+        return $query->where('user_id', auth()->id())->orWhere('recipient', auth()->id());
     }
 }

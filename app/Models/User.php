@@ -108,4 +108,17 @@ class User extends Authenticatable
     {
         return $this->status == 'profile';
     }
+
+    // 2FA Verification
+    public function hasVerifiedPhone()
+    {
+        return (bool)$this->verified;
+    }
+
+    public function markPhoneAsVerified()
+    {
+        return $this->forceFill([
+            'verified' => true,
+        ])->save();
+    }
 }

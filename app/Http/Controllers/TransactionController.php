@@ -33,7 +33,7 @@ class TransactionController extends Controller
             $transactions = $transactions->filterByDuration(request()->query('duration'));
         }
         
-        $transactions = $transactions->simplePaginate($this->paginate_count)->withQueryString();
+        $transactions = $transactions->mine()->notAdmin()->desc()->simplePaginate($this->paginate_count)->withQueryString();
         return view('transactions', compact('transactions'));
     }
 

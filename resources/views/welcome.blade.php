@@ -338,16 +338,14 @@
     <div class="uk-grid uk-flex uk-flex-center">
       <div class="uk-width-1-1 uk-text-center">
         <h1 class="uk-margin-medium-bottom">What People Are Saying About Us</h1>
-        <div class="slider testimonial ">
+        <div class="slider testimonial">
 
         @foreach($testimonials as $says)
           <div class="multiple">
             <div class="testimony">
-              <p class="uk-text-center">{{ $says->message }}</p>
+              <p class="message uk-text-center">{{ $says->message }}</p>
               <div class="uk-flex uk-flex-center">
-                <div class="test-img">
-                  <img  src="{{ Storage::url($says->thumbnail) }}" alt="">
-                </div>
+                
                 <div class="test-name">
                   <h4>{{ $says->name }}</h4>
                   <!-- <span class="guest-rev"><a href="#">Client</a></span> -->

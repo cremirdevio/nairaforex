@@ -59,4 +59,11 @@ class TraderUser extends Model
         return number_format($total, 2, '.', $sep = ',');
     }
 
+    public function getAbsoluteReturnsRaw() {
+        $returns = $this->trader->returns;
+        // Dividede by 10000 since the amount is given in kobo
+        $total = ($returns * $this->amount)/10000;
+        return $total;
+    }
+
 }

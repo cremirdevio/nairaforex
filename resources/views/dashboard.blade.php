@@ -22,6 +22,10 @@
         <div class="uk-width-1-3@m uk-text-left uk-margin-bottom">
           <h3 class="uk-margin-remove nf-profile-title">Profile Information</h3>
           <p class="uk-margin-small-top nf-profile-desc">Update your account's profile information</p>
+          <div class="uk-alert uk-alert-danger">
+            <p>Ensure your mobile number is set correctly(by selecting the right country) as this will be used to send
+              you vital information.</p>
+          </div>
         </div>
 
 
@@ -30,7 +34,7 @@
             @csrf
             @method('put')
             <div
-              class="uk-card uk-card-default nf-profile-card nf-card nf-card-border uk-overflow-hidden uk-margin-remove@s nf-card-border">
+              class="uk-card uk-card-default nf-profile-card nf-card nf-card-border uk-margin-remove@s nf-card-border">
               <div class="uk-card-body">
 
                 <div class="uk-grid uk-text-left">
@@ -64,8 +68,8 @@
                   <div class="uk-margin-small-bottom uk-width-1-2@s">
                     <label class="uk-form-label nf-profile-desc" for="form-stacked-text">Mobile Number</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input uk-border-rounded" id="form-stacked-text" name="phonenumber"
-                        value="{{ $user->phonenumber }}" type="text" placeholder="Mobile Number">
+                      <input class="uk-input uk-border-rounded" id="phone_number" value="{{ $user->phonenumber }}"
+                        type="tel" placeholder="Mobile Number">
                     </div>
                   </div>
 
@@ -114,10 +118,10 @@
                   <div class="uk-margin-small-bottom uk-width-1-2@s">
                     <label class="uk-form-label nf-profile-desc" for="form-stacked-text">Bank Name</label>
                     <div class="uk-form-controls">
-                      <select class="uk-select uk-border-rounded" name="bankname"
-                        value="{{ $user->wallet->bankname }}" >
+                      <select class="uk-select uk-border-rounded" name="bankname" value="{{ $user->wallet->bankname }}">
                         @foreach(config('banks') as $key => $value)
-                        <option value="{{ $key }}" {{ $key == $user->wallet->bankname ? 'selected' : '' }}>{{ $value }}</option>
+                        <option value="{{ $key }}" {{ $key == $user->wallet->bankname ? 'selected' : '' }}>{{ $value }}
+                        </option>
                         @endforeach
                       </select>
                     </div>
@@ -229,10 +233,9 @@
 
               @if ($user->two_factor_secret)
 
-              <p class="uk-text-small">Two factor authentication is now enabled. Scan the following QR code using your
-                phone's authenticator application.</p>
+              <p class="uk-text-small">Two factor authentication is now enabled.</p>
 
-              <div class="mt-4 dark:p-4 dark:w-56 dark:bg-white">
+              <!-- <div class="mt-4 dark:p-4 dark:w-56 dark:bg-white">
                 {!! request()->user()->twoFactorQrCodeSvg() !!}
               </div>
 
@@ -245,19 +248,19 @@
                 @foreach(json_decode(decrypt(request()->user()->two_factor_recovery_codes)) as $code)
                 <div>{{ $code }}</div>
                 @endforeach
-              </div>
+              </div> -->
 
               <div class="uk-width-3-4@s uk-border-rounded ">
                 <div class="uk-grid uk-text-left">
-                  <div class="uk-margin-small-bottom uk-width-3-4@s">
+                  <!-- <div class="uk-margin-small-bottom uk-width-3-4@s">
                     <form class="uk-form-stacked" action="{{ url('user/two-factor-recovery-codes') }}" method="post">
                       @csrf
                       <button class="uk-button nf-card-button uk-button-default uk-border-rounded">Regenerate Recovery
                         Code</button>
                     </form>
-                  </div>
+                  </div> -->
 
-                  <div class="uk-margin-small-bottom uk-padding-remove-left uk-width-1-4@s">
+                  <div class="uk-margin-small-bottom uk-width-1-4@s">
                     <form class="uk-form-stacked" action="{{ url('/user/two-factor-authentication') }}" method="post">
                       @csrf
                       @method('delete')
@@ -271,8 +274,7 @@
               @else
               <h3 class="nf-profile-title">You have not enabled two factor authentication.</h3>
               <p class="uk-text-small">When two factor authentication is enabled, you will be prompted for a secure,
-                random token during authentication. You may retrieve this token from your phone's Google Authenticator
-                application.</p>
+                random token during authentication. Tthis token will be sent to your registered phonenumber.</p>
               <form class="uk-form-stacked" action="{{ url('/user/two-factor-authentication') }}" method="post">
                 @csrf
                 <button type="submit"
@@ -296,3 +298,19 @@
 
 
 @endsection
+
+@push('scripts')
+<script src="{{ asset('js/intlTelInput.js') }}"></script>
+<script>
+var input = document.querySelector("#phone_number");
+window.intlTelInput(input, {
+  hiddenInput: "phonenumber",
+  preferredCountries: ["us", "gb", "co", "de"],
+  utilsScript: "{{ asset('js/utils.js') }}"
+});
+</script>
+@endpush
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}" />
+@endpush

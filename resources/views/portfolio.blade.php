@@ -115,7 +115,11 @@
           </div>
         </div>
         @empty
-
+        <div class="uk-tile bg-primary uk-padding-large">
+          <p>You do not have capital assigned to any remote traders. Please click on Assign Remote traders below to
+            assign one or more traders to your capital.</p>
+          <a class="uk-button uk-button-secondary" href="{{ route('traders') }}">Assign Remote Traders</a>
+        </div>
         @endforelse
       </div>
 
