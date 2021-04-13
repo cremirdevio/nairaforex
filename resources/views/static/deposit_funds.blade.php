@@ -13,23 +13,14 @@
           </div>
           <div class="uk-width-expand">
             <h3>Fund your Account</h3>
-            <p>Funding your Nairaforex account is very easy.</p>
+            <p>Funding your Nairaforex account is as easy as it gets.</p>
             <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-2@m in-margin-bottom-30@s" data-uk-grid>
               <div>
                 <ul class="uk-list uk-list-bullet in-list-check">
-                  <li>Funding your nairaforex account is easy</li>
-                  <li>Call or send a WhatsApp message to any of our below numbers.</li>
-                  <li>After payment, send us your username, full name.</li>
+                  <li>Call or send a WhatsApp message to the numbers listed below.</li>
+                  <li>After payment, send your username, full name.</li>
                   <li>We will confirm your payment within 10 minutes and your wallet will be credited immediately after
-                    confirmation</li>
-                </ul>
-              </div>
-              <div class="in-margin-small-top@s in-margin-bottom@s">
-                <ul class="uk-list uk-list-bullet in-list-check">
-                  <li>
-                    <p>Account</p>
-                    <p>*********</p>
-                  </li>
+                    confirmation. </li>
                 </ul>
               </div>
             </div>

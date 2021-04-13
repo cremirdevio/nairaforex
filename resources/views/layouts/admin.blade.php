@@ -3,6 +3,12 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="description"
+    content="Nairaforex enable users to assign the
+          best remote professional forex traders to their capital and earn reasonable returns within a specific period.">
+  <meta name="keywords"
+    content="nairaforex, forex, investment, trading, copy-trading, professional-traders, earn-from-forex, returns, cremir, cremir.org">
+  <meta name="author" content="cremirdevio">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSRF Token -->

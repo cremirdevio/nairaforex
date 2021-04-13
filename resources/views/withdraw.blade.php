@@ -16,10 +16,10 @@
             <div class="uk-grid uk-width-large in-margin-bottom-30@s" data-uk-grid>
               <div>
                 <ul class="uk-list uk-list-bullet in-list-check">
-                  <li>Payment is processed within 24hours or less.</li>
-                  <li>Make sure your banking details is correct.</li>
+                  <li>Every payment is processed within 24hours or less.</li>
+                  <li>Ensure your banking details is correct.</li>
                   <li>T+0 settlement</li>
-                  <li>We do not charge any fees on withdrawal or deposit.</li>
+                  <li>We do not charge any fee on deposits..</li>
                 </ul>
               </div>
             </div>

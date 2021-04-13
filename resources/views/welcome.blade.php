@@ -130,11 +130,13 @@
     <div class="uk-grid">
       <div class="uk-width-4-4@m">
         <h1 class="uk-margin-remove-bottom">Industry-<span class="in-highlight">leading</span> forex traders</h1>
-        <p class="uk-text-lead uk-text-muted uk-margin-small-top uk-margin-bottom">Nairaforex enable users to assign
-          best remote professional forex traders to their capital and earn reasonable returns within a specific
-          duration, Our traders work remotely across Nigeria, South Africa, Kenya and other countries, with
-          nairaforex, you can easily assign top forex trader to your dashboard to trade on your behalf and get back
-          reasonable returns at the end of the specified duration.</p>
+        <p class="uk-text-lead uk-text-muted uk-margin-small-top uk-margin-bottom">Nairaforex enable users to assign the
+          best remote professional forex traders to their capital and earn reasonable returns within a specific period.
+        </p>
+        <p class="uk-text-lead uk-text-muted uk-margin-small-top uk-margin-bottom">Our traders work remotely across
+          Nigeria, South Africa, Kenya and other countries. With Nairaforex, you can easily assign these taders to your
+          funds to trade on your behalf and get back reasonable returns at the end of a specified duration.
+        </p>
       </div>
     </div>
   </div>
@@ -145,21 +147,27 @@
 <div class="uk-section uk-section-muted uk-padding-large in-wave-3 uk-background-contain uk-background-center"
   style="background-image: url(img/in-wave-background-1.png);" data-uk-parallax="bgy: -200">
   <div class="uk-container">
-    <div class="uk-grid-large uk-flex uk-flex-middle" data-uk-grid>
+    <div class="uk-grid-large uk-flex uk-flex-start" data-uk-grid>
       <div class="uk-width-1-2@m uk-inline">
         <img class="uk-margin-bottom uk-position-top-right" src="img/in-lazy.gif" data-src="img/in-wave-icon-5.svg"
           alt="wave-icon" width="64" height="64" data-uk-img>
         <h1 class="uk-margin-remove">Money <span class="in-highlight">back</span> <br>guarantee</h1>
-        <p>Most of our remote traders offer Money Back Guarantee (MBG) which means you get back your capital even if
-          trade goes sideways. With the help of nairaforex, you are 100% covered.</p>
+        <p>Our remote traders offer different Money Back Guarantee (MBG) on every trade which means you get a certain
+          percentage of your capital in the eventuality that the trading season was not favorable. </p>
+        <p><b>Or</b> We understand that trading the foreign exchange involves a high level of risk with a high
+          possibility of
+          sustaining a loss of some of the capital. Which is why there is a minimum 70% money-back guarantee on the
+          capital. The 70% guarantee agrees with our 30% risk management system imposed on our remote traders. </p>
 
       </div>
       <div class="uk-width-1-2@m uk-inline">
         <img class="uk-margin-bottom uk-position-top-right" src="img/in-lazy.gif" data-src="img/in-wave-icon-5.svg"
           alt="wave-icon" width="64" height="64" data-uk-img>
         <h1 class="uk-margin-remove">Assign <span class="in-highlight">more</span> than <br>one trader</h1>
-        <p>You can divide your capital and assign more than one remote trader to your nairaforex portfolio. You can
-          assign up to ten remote traders.</p>
+        <p>You can divide your capital by assigning more than one remote trader to your nairaforex portfolio. You can
+          assign up to ten remote traders. + each trader operate with a different trading style so before deciding to
+          assign some of your capital to any, you should carefully consider their MBG, your objectives and risk
+          appetite. </p>
 
       </div>
     </div>
@@ -279,47 +287,51 @@
           <li>
             <a class="uk-accordion-title" href="#">How do I deposit into my nairaforex account?</a>
             <div class="uk-accordion-content">
-              <p>To deposit into your nairaforex account, login and click on “Deposit” and follow the instructions.
-                After funding your account you can go ahead to assign a trader to your capital.</p>
+              <p>To deposit into your Nairaforex account, login and click on Deposit, then follow the instructions.
+                After funding your account you can then go ahead to assign a trader to your capital.</p>
             </div>
           </li>
           <li>
             <a class="uk-accordion-title" href="#">What is the minimum amount I can assign to a trader?</a>
             <div class="uk-accordion-content">
-              <p>The general minimum is N100,000 and maximum of N300 million per individual or corporate bodies.</p>
+              <p>The minimum that can be assigned to a trader is N100,000. While the maximum is set at N300 million per
+                individual or corporate bodies.</p>
             </div>
           </li>
           <li>
             <a class="uk-accordion-title" href="#">How do I withdraw from my nairaforex account?</a>
             <div class="uk-accordion-content">
-              <p>Withdrawal is very easy and fast, to withdraw from your account click on “Withdraw” and your
-                withdrawal will be processed instantly or maximum of 24hours.</p>
+              <p>Withdrawal is easy and fast. To withdraw from your account, click on Withdraw and your withdrawal will
+                be processed instantly or within a period of 24hours.</p>
             </div>
           </li>
           <li>
             <a class="uk-accordion-title" href="#">Can I assign multiple funds to multiple traders?</a>
             <div class="uk-accordion-content">
-              <p>Yes, you can divide your capital and assign multiple traders to each amount./p>
+              <p>Yes, you can assign funds to more than one trader. </p>
             </div>
           </li>
           <li>
             <a class="uk-accordion-title" href="#">What does MBG means?</a>
             <div class="uk-accordion-content">
-              <p>MBG means Money Back Guarantee, most nairafx traders offer the money back guarantee, for example 100%
-                MBG means if trading is not favorable, you will get back 100% of your capital back.</p>
+              <p>MBG means Money Back Guarantee, most Nairafx traders offer the money back guarantee. 100% MBG means if
+                trading season is not favorable, you will get back 100% of your capital.</p>
             </div>
           </li>
           <li>
             <a class="uk-accordion-title" href="#">Do I need to pay before I can assign a trader to my capital?</a>
             <div class="uk-accordion-content">
-              <p>NO, you will not be paying any fee to our traders, Nairaforex is responsible for that, we pay our
-                traders on a weekly basis and we cover all other expenses also.</p>
+              <p><b>NO</b>, you will not be paying any personal fee to our traders as that is the responsibility
+                Nairaforex. We
+                pay our traders on a weekly basis with added commission depending on the profitability of the trading
+                season.
+              </p>
             </div>
           </li>
           <li>
             <a class="uk-accordion-title" href="#">How much fee do nairaforex charge users on transaction?</a>
             <div class="uk-accordion-content">
-              <p>We only charge transaction fee on withdrawal which is less than 2% of totalwithdrawal.</p>
+              <p>We charge transaction fee on withdrawal which is less than 2% of total fund withdrawn.</p>
             </div>
           </li>
         </ul>
@@ -340,12 +352,12 @@
         <h1 class="uk-margin-medium-bottom">What People Are Saying About Us</h1>
         <div class="slider testimonial">
 
-        @foreach($testimonials as $says)
+          @foreach($testimonials as $says)
           <div class="multiple">
             <div class="testimony">
               <p class="message uk-text-center">{{ $says->message }}</p>
               <div class="uk-flex uk-flex-center">
-                
+
                 <div class="test-name">
                   <h4>{{ $says->name }}</h4>
                   <!-- <span class="guest-rev"><a href="#">Client</a></span> -->
@@ -353,7 +365,7 @@
               </div>
             </div>
           </div>
-        @endforeach
+          @endforeach
 
         </div>
       </div>
