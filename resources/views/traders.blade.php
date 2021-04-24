@@ -100,7 +100,7 @@
               <div class="uk-flex uk-flex-column uk-margin-left">
                 <h4 class="uk-margin-remove nf-table-trader-name">{{ $trader->name }}</h4>
                 <span class="uk-text-primary uk-text-left">
-                  Nigerian <img src="{{ $trader->getFlag() }}" alt="Flag" class="flags-size">
+                {{ $trader->getCountry() }} <img src="{{ $trader->getFlag() }}" alt="Flag" class="flags-size">
                 </span>
               </div>
             </div>

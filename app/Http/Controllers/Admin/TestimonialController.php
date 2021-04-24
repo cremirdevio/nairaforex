@@ -64,19 +64,23 @@ class TestimonialController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'message' => 'required|string',
-            'thumbnail' => 'required|file|image|mimes:jpg,png,jpeg|max:2048',
+            'thumbnail' => 'nullable|file|image|mimes:jpg,png,jpeg|max:2048',
         ]);
-
-        $file = $request->file('thumbnail');
-        $filename = Str::slug($request->type, '-') . time().'.'.$file->extension();
-
-        $path = $file->storeAs(
-            'testimonials', $filename
-        );
+        
+        $path = "";
+        if (isset($request->thumbnail)) {
+            $file = $request->file('thumbnail');
+            $filename = Str::slug($request->type, '-') . time().'.'.$file->extension();
+    
+            $path = $file->storeAs(
+                'testimonials', $filename
+            );
+        }
+        
         $data = array("name" => $request->name, "message" => $request->message, "thumbnail" => $path);
         $testimonial = Testimonial::create($data);
 
-        return back()->with('success', 'Testimonial created successfully!');
+        return redirect()->route('admin.testimonials')->with('success', 'Testimonial created successfully!');
     }
     
     public function destroy(Testimonial $testimonial) {

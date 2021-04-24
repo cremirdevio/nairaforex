@@ -18,7 +18,7 @@ class CreateTradersTable extends Migration
             $table->string('name')->unique();
             $table->string('thumbnail')->nullable();
             $table->string('nationality');
-            $table->decimal('returns', 4, 2);
+            $table->decimal('returns', 5, 2);
             $table->integer('duration');
             $table->enum('duration_', ['days', 'weeks', 'months', 'years'])->default('weeks');
             $table->string('experience');

@@ -36,7 +36,7 @@ class TraderService
 
             throw Exception('Could not create trader');
         }
-
+        DB::commit();
         return $trader;
     }
 
@@ -65,7 +65,7 @@ class TraderService
         if ($investors->isEmpty()) {
             $trader->delete();
 
-            return back()->with('success', 'Trader deleted successfully!');
+            return redirect()->route('admin.traders')->with('success', 'Trader deleted successfully!');
         }
 
         return back()->with('warning', 'You can\'t delete the trader. Trader still assigned to wallets.');

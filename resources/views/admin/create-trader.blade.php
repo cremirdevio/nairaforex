@@ -41,7 +41,7 @@
                   placeholder="Experience">
               </div>
               <div class="uk-margin">
-                <input class="uk-input uk-border-rounded" type="number" step="0.01" min="0" max="100" name="mbg"
+                <input class="uk-input uk-border-rounded" type="number" step="0.01" min="0" max="200" name="mbg"
                   value="{{ old('mbg') }}" placeholder="Money Back Guarantee">
               </div>
               <div class="uk-margin">

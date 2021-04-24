@@ -42,6 +42,11 @@
     <div></div>
     <div></div>
   </div>
+  
+  <!-- module navigation begin -->
+  @include('partials.nav')
+  <!-- module navigation end -->
+
   <!-- preloader end -->
   <main>
     @yield('content')

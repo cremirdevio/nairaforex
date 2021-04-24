@@ -38,7 +38,7 @@ class TraderController extends Controller
             'duration' => 'required|numeric|min:0',
             'duration_' => 'required|in:days,weeks,months,years',
             'experience' => 'required|string',
-            'mbg' => 'required|numeric|min:0|max:100',
+            'mbg' => 'required|numeric|min:0|max:200',
             'rating' => 'required|numeric|min:0|max:10'
         ]);
 
@@ -69,7 +69,7 @@ class TraderController extends Controller
             'duration' => 'required|numeric|min:0',
             'duration_' => 'required|in:days,weeks,months,years',
             'experience' => 'required|string',
-            'mbg' => 'required|numeric|min:0|max:100',
+            'mbg' => 'required|numeric|min:0|max:200',
             'rating' => 'required|numeric|min:0|max:10'
         ]);
 

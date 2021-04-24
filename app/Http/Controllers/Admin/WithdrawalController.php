@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\withdrawal;
+use App\Models\Withdrawal;
 use App\Models\User;
 use App\Services\TransactionService;
 use Illuminate\Http\Request;

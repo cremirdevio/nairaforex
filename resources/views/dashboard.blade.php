@@ -6,7 +6,7 @@
   <div class="uk-container uk-padding-remove-horizontal">
     <div class="uk-grid ">
       <div class="uk-width-1-1 uk-margin-small-bottom uk-margin-large-left">
-        <h1 class="uk-margin uk-margin-small-bottom">Account <span class="in-highlight">Settings</span></h1>
+        <h1 class="uk-margin uk-margin-small-bwo Factor Authenticationottom">Account <span class="in-highlight">Settings</span></h1>
       </div>
     </div>
   </div>
@@ -23,8 +23,8 @@
           <h3 class="uk-margin-remove nf-profile-title">Profile Information</h3>
           <p class="uk-margin-small-top nf-profile-desc">Update your account's profile information</p>
           <div class="uk-alert uk-alert-danger">
-            <p>Ensure your mobile number is set correctly(by selecting the right country) as this will be used to send
-              you vital information.</p>
+            <!-- <p>Ensure your mobile number is set correctly(by selecting the right country) as this will be used to send
+              you vital information.</p> -->
           </div>
         </div>
 
@@ -218,77 +218,7 @@
       </div>
 
       <!-- Two Factor Authentication Panel -->
-      <div class="uk-grid uk-text-center uk-width-1-1 uk-margin-top">
-        <div class="uk-width-1-3@m uk-text-left uk-margin-bottom">
-          <h3 class="uk-margin-remove nf-profile-title">Two Factor Authentication</h3>
-          <p class="uk-margin-small-top nf-profile-desc">Add additional security to your account using two factor
-            authentication.</p>
-        </div>
-
-        <div class="uk-width-2-3@m ">
-
-          <div
-            class="uk-card uk-card-default nf-profile-card nf-card nf-card-border uk-overflow-hidden uk-margin-remove@s nf-card-border">
-            <div class="uk-card-body uk-text-left">
-
-              @if ($user->two_factor_secret)
-
-              <p class="uk-text-small">Two factor authentication is now enabled.</p>
-
-              <!-- <div class="mt-4 dark:p-4 dark:w-56 dark:bg-white">
-                {!! request()->user()->twoFactorQrCodeSvg() !!}
-              </div>
-
-              <p class="uk-text-small">Store these recovery codes in a secure password manager. They can be used to
-                recover access to your account if your two factor authentication device is lost.</p>
-
-              <div
-                class="uk-width-3-4@s uk-text-small uk-padding-small nf-recovery uk-border-rounded uk-background-muted uk-margin-bottom">
-
-                @foreach(json_decode(decrypt(request()->user()->two_factor_recovery_codes)) as $code)
-                <div>{{ $code }}</div>
-                @endforeach
-              </div> -->
-
-              <div class="uk-width-3-4@s uk-border-rounded ">
-                <div class="uk-grid uk-text-left">
-                  <!-- <div class="uk-margin-small-bottom uk-width-3-4@s">
-                    <form class="uk-form-stacked" action="{{ url('user/two-factor-recovery-codes') }}" method="post">
-                      @csrf
-                      <button class="uk-button nf-card-button uk-button-default uk-border-rounded">Regenerate Recovery
-                        Code</button>
-                    </form>
-                  </div> -->
-
-                  <div class="uk-margin-small-bottom uk-width-1-4@s">
-                    <form class="uk-form-stacked" action="{{ url('/user/two-factor-authentication') }}" method="post">
-                      @csrf
-                      @method('delete')
-                      <button class="uk-button nf-card-button uk-button-danger uk-border-rounded">Disable</button>
-                    </form>
-                  </div>
-
-                </div>
-              </div>
-
-              @else
-              <h3 class="nf-profile-title">You have not enabled two factor authentication.</h3>
-              <p class="uk-text-small">When two factor authentication is enabled, you will be prompted for a secure,
-                random token during authentication. Tthis token will be sent to your registered phonenumber.</p>
-              <form class="uk-form-stacked" action="{{ url('/user/two-factor-authentication') }}" method="post">
-                @csrf
-                <button type="submit"
-                  class="uk-button nf-card-button uk-button-secondary uk-border-rounded">Enable</button>
-              </form>
-              @endif
-
-            </div>
-            <!-- <div class="uk-card-footer nf-card-footer uk-text-right" style="background: #f0eff3;">
-              <button class="uk-button nf-card-button uk-button-secondary uk-border-rounded">Save</button>
-            </div> -->
-          </div>
-        </div>
-      </div>
+      
 
     </div>
 

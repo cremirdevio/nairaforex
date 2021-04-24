@@ -68,7 +68,7 @@
               </div>
               <div class="uk-margin">
                 <label class="uk-form-label">Money Back Guarantee:</label>
-                <input class="uk-input uk-border-rounded" type="number" step="0.01" min="0" max="100" name="mbg"
+                <input class="uk-input uk-border-rounded" type="number" step="0.01" min="0" max="200" name="mbg"
                   value="{{ $trader->mbg }}" placeholder="Money Back Guarantee">
               </div>
               <div class="uk-margin">
