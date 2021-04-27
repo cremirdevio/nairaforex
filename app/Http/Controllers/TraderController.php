@@ -39,7 +39,7 @@ class TraderController extends Controller
     public function store(Request $request, Trader $trader)
     {
         $request->validate([
-            'amount' => ['required', 'numeric', 'min:10.00', 'max:15000.00'],
+            'amount' => ['required', 'numeric', 'min:100000', 'max:300000000'],
         ]);
 
         $user = auth()->user();
@@ -50,7 +50,7 @@ class TraderController extends Controller
 
         $this->transactionService->buyShares($request, $trader);
 
-        return back()->with('success', 'Your withdrawal is being processed. Processing lasts within 24 hours.');
+        return back()->with('success', 'You have successfully assigned the capital to the trader.');
     }
 
 }

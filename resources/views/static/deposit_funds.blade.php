@@ -37,7 +37,7 @@
                 <p>Contact us on +23481 00000000</p>
               </div>
               <div class="uk-width-auto">
-                <a class="uk-button uk-button-primary uk-border-rounded" href="#">Contact us on WhatsApp</a>
+                <a class="uk-button uk-button-primary uk-border-rounded" href="https://wa.me/2347082868561">Contact us on WhatsApp</a>
               </div>
             </div>
             <hr>
@@ -47,7 +47,7 @@
                 <p>Contact us on +23481 00000000</p>
               </div>
               <div class="uk-width-auto">
-                <a class="uk-button uk-button-primary uk-border-rounded" href="#">Contact us on WhatsApp</a>
+                <a class="uk-button uk-button-primary uk-border-rounded" href="https://wa.me/2347082868561">Contact us on WhatsApp</a>
               </div>
             </div>
 
@@ -58,7 +58,7 @@
                 <p>Contact us on +23481 00000000</p>
               </div>
               <div class="uk-width-auto">
-                <a class="uk-button uk-button-primary uk-border-rounded" href="#">Contact us on WhatsApp</a>
+                <a class="uk-button uk-button-primary uk-border-rounded" href="https://wa.me/2347082868561">Contact us on WhatsApp</a>
               </div>
             </div>
 

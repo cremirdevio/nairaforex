@@ -58,7 +58,7 @@ class WithdrawalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'amount' => ['required', 'numeric', 'min:10.00', 'max:15000.00'],
+            'amount' => ['required', 'numeric', 'min:100000', 'max:300000000'],
         ]);
 
         $amount = $request->amount * 100;

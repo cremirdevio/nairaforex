@@ -19,7 +19,7 @@
               </select>
             </div>
             <div class="uk-width-1-2@s uk-width-1-4@m">
-              <label class="uk-form-label">Status</label>
+              <label class="uk-form-label">Time</label>
               <select class="uk-input uk-border-rounded" name="duration" id="date-filter">
                 <option value="all">All Time</option>
                 <option value="this_month">This Month</option>
